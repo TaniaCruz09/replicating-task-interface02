@@ -1,29 +1,23 @@
 import React from "react";
 import {
   Image,
-  ImageBackground,
   SafeAreaView,
+  ScrollView,
   StatusBar,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { InfoBoxes } from "../components/InfoBoxes";
+import { Footer } from "../components/Footer";
+import { Header } from "../components/Header";
 
 export const Galery = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar backgroundColor="#fff" barStyle="dark-content" />
-      <View style={styles.containerHeader}>
-        <Text style={styles.textHeader}>Hey, brytten</Text>
-        <Image
-          style={styles.imgHeader}
-          source={require("../../images/persona.jpg")}
-        />
-      </View>
+      <Header />
+
       <View style={styles.containerBody}>
         <InfoBoxes
           direction={require("../../images/first.jpg")}
@@ -45,7 +39,12 @@ export const Galery = () => {
       <View style={styles.containerTextMedium}>
         <Text style={styles.textMedium}>Guess you like it</Text>
       </View>
-      <View style={styles.containerFrutas}>
+
+      <ScrollView
+        horizontal={true}
+        style={styles.scrollView}
+        showsHorizontalScrollIndicator={false}
+      >
         <Image
           style={styles.imgFrutas}
           source={require("../../images/naranjas.jpg")}
@@ -54,16 +53,8 @@ export const Galery = () => {
           style={styles.imgFrutas}
           source={require("../../images/bananas.jpg")}
         />
-      </View>
-      <View style={styles.containerFooter}>
-        <Text>Home</Text>
-        <AntDesign name="pluscircle" size={50} color="#FFB890" />
-        <MaterialCommunityIcons
-          name="credit-card-check-outline"
-          size={30}
-          color="grey"
-        />
-      </View>
+      </ScrollView>
+      <Footer />
     </SafeAreaView>
   );
 };
@@ -71,23 +62,6 @@ export const Galery = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  },
-  containerHeader: {
-    flexDirection: "row",
-    marginHorizontal: 30,
-    marginVertical: 45,
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  textHeader: {
-    fontSize: 35,
-    fontWeight: "bold",
-    // fontFamily: "M Ying Hei PRC W48 W7",
-  },
-  imgHeader: {
-    width: "15%",
-    height: "120%",
-    borderRadius: 10,
   },
   containerBody: {
     height: "45%",
@@ -106,22 +80,14 @@ const styles = StyleSheet.create({
     fontSize: 33,
     fontWeight: "bold",
   },
-  containerFrutas: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    height: "17%",
+  scrollView: {
+    height: "16%",
+    marginLeft: 20,
   },
   imgFrutas: {
-    width: "65%",
-    height: "100%",
+    width: 300,
+    marginHorizontal: 10,
+    height: 150,
     borderRadius: 20,
-    marginLeft: 30,
-  },
-  containerFooter: {
-    flexDirection: "row",
-    marginVertical: 40,
-    marginHorizontal: 20,
-    justifyContent: "space-evenly",
-    alignItems: "center",
   },
 });

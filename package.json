@@ -4,9 +4,9 @@
   "main": "node_modules/expo/AppEntry.js",
   "rnpm": {
     "assets": [
-	"./fonts"
+      "./fonts"
     ]
-},
+  },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -19,7 +19,8 @@
     "react": "18.0.0",
     "react-dom": "18.0.0",
     "react-native": "0.69.6",
-    "react-native-web": "~0.18.7"
+    "react-native-web": "~0.18.7",
+    "expo-font": "~10.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
